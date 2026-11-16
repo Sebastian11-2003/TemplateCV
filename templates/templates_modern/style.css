@@ -1,0 +1,715 @@
+
+/* ========================================
+   1. RESET & GLOBAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #8b5cf6;
+    --primary-dark: #7541db;
+    --primary-light: #f3edff;
+    --dark: #252334;
+    --text: #343241;
+    --muted: #858394;
+    --border: #e9e7ef;
+    --background: #f6f5fa;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* EDITOR NAVBAR */
+
+.editor-navbar {
+    width: 100%;
+    height: 68px;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8ed;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left {
+    gap: 13px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #252238;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #7655d9;
+    color: white;
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.navbar-divider {
+    color: #d0ced8;
+}
+
+.page-label {
+    color: #777386;
+    font-size: 14px;
+}
+
+.navbar-right {
+    gap: 12px;
+}
+
+.guest-status {
+    font-size: 12px;
+    color: #25865b;
+    background: #eaf8f0;
+    padding: 7px 12px;
+    border-radius: 20px;
+    margin-right: 8px;
+}
+
+.login-btn,
+.register-btn {
+    padding: 9px 19px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.login-btn {
+    color: #7655d9;
+    border: 1px solid #7655d9;
+}
+
+.login-btn:hover {
+    background: #f5f1ff;
+}
+
+.register-btn {
+    color: #ffffff;
+    background: #7655d9;
+}
+
+.register-btn:hover {
+    background: #6341c5;
+}
+
+@media (max-width: 600px) {
+    .editor-navbar {
+        padding: 0 15px;
+        height: 62px;
+    }
+
+    .page-label,
+    .navbar-divider,
+    .guest-status {
+        display: none;
+    }
+
+    .brand-logo {
+        font-size: 16px;
+    }
+
+    .login-btn,
+    .register-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+/* ========================================
+   2. MAIN LAYOUT
+======================================== */
+
+.builder-layout {
+    display: grid;
+    grid-template-columns: 380px minmax(0, 1fr);
+    gap: 25px;
+    max-width: 1600px;
+    margin: 20px auto;
+    padding: 0 25px;
+    align-items: start;
+    min-height: calc(100vh - 88px);
+}
+
+/* ========================================
+   3. EDITOR PANEL
+======================================== */
+
+.editor-container {
+    background: var(--white);
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(40, 30, 70, 0.05);
+}
+
+.editor-container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.editor-container > p,
+.form-description {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+#cvForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#cvForm h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    padding-bottom: 11px;
+    margin-top: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+#cvForm label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555264;
+    margin-bottom: -8px;
+}
+
+#cvForm input,
+#cvForm textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    background: #fcfbfe;
+    color: var(--text);
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+#cvForm input:focus,
+#cvForm textarea:focus {
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.10);
+}
+
+#cvForm input::placeholder,
+#cvForm textarea::placeholder {
+    color: #aaa7b6;
+}
+
+#cvForm textarea {
+    min-height: 100px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+#cvForm input[type="file"] {
+    cursor: pointer;
+    background: var(--primary-light);
+    border: 1px dashed #b9a1f5;
+    padding: 12px;
+    color: #7150ba;
+}
+
+#cvForm input[type="file"]::file-selector-button {
+    background: var(--primary);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* ========================================
+   4. DOWNLOAD BUTTON
+======================================== */
+
+#downloadButton {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #9b70fa, #7545d8);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+    transition: all 0.25s ease;
+}
+
+#downloadButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+#downloadButton:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   5. LIVE PREVIEW
+======================================== */
+
+.preview-container {
+    min-width: 0;
+}
+
+.preview-heading {
+    margin-bottom: 20px;
+}
+
+.preview-heading h2 {
+    font-size: 24px;
+    color: var(--dark);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.preview-heading p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+/* ========================================
+   6. CV PAPER
+======================================== */
+
+.cv-container {
+    width: 100%;
+    max-width: 794px;
+    min-height: 0;
+    height: auto;
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--text);
+}
+
+/* ========================================
+   7. CV HEADER
+======================================== */
+
+.header {
+    min-height: 205px;
+    background: linear-gradient(125deg, #292638, #403552);
+    color: white;
+    padding: 40px 45px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+    right: -55px;
+    top: -65px;
+}
+
+/* ========================================
+   8. PROFILE PHOTO
+======================================== */
+
+.profile-wrapper {
+    width: 160px;
+    height: 160px;
+    min-width: 160px;
+    min-height: 160px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    flex-shrink: 0;
+    position: relative;
+    background: #e5e7eb;
+}
+
+.profile-wrapper img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center center;
+
+    border-radius: 50%;
+}
+
+/* ========================================
+   9. NAME & JOB TITLE
+======================================== */
+
+.header-info {
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.header-info h1 {
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    overflow-wrap: anywhere;
+}
+
+.header-info p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #c9b8f4;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   10. CV MAIN CONTENT
+======================================== */
+
+.content {
+    padding: 35px 45px 40px;
+}
+
+/* ========================================
+   11. TOP SECTION
+======================================== */
+
+.top-section {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 35px;
+    margin-bottom: 30px;
+}
+
+.section-column {
+    min-width: 0;
+}
+
+.section-column h2,
+.experience-section h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #393348;
+    letter-spacing: 1.2px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.section-column p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #666273;
+    text-align: justify;
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   12. DIVIDER
+======================================== */
+
+.content hr {
+    border: none;
+    border-top: 1px solid #eae7f0;
+    margin: 25px 0;
+}
+
+/* ========================================
+   13. WORK EXPERIENCE
+======================================== */
+
+.experience-section {
+    margin-bottom: 30px;
+}
+
+.experience-section > h2 {
+    margin-bottom: 20px;
+}
+
+.experience-section h3,
+.experience-item h3 {
+    font-size: 13px;
+    color: #373244;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.experience-section h4,
+.experience-item h4 {
+    font-size: 12px;
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.experience-section p,
+.experience-item p {
+    font-size: 11px;
+    color: #666273;
+    line-height: 1.7;
+    margin-bottom: 5px;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-item ul {
+    padding-left: 18px;
+    margin-top: 7px;
+}
+
+.experience-item ul li {
+    font-size: 11px;
+    line-height: 1.7;
+    color: #666273;
+    margin-bottom: 4px;
+}
+
+/* ========================================
+   14. BOTTOM SECTION
+======================================== */
+
+.bottom-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.bottom-section .section-column {
+    min-width: 0;
+}
+
+.bottom-section .section-column > div {
+    margin-bottom: 16px;
+}
+
+.bottom-section h3 {
+    font-size: 12px;
+    color: #373244;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.bottom-section h4 {
+    font-size: 11px;
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.bottom-section p {
+    font-size: 11px;
+    color: #666273;
+    line-height: 1.7;
+}
+
+/* ========================================
+   15. RESPONSIVE TABLET
+======================================== */
+
+@media screen and (max-width: 1100px) {
+    body {
+        padding: 20px;
+    }
+
+    .builder-layout {
+        grid-template-columns: 320px minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .editor-container {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 30px;
+    }
+
+    .header {
+        padding: 30px;
+    }
+}
+
+/* ========================================
+   16. RESPONSIVE MOBILE
+======================================== */
+
+@media screen and (max-width: 750px) {
+    body {
+        padding: 12px;
+    }
+
+    .builder-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .editor-container {
+        padding: 20px;
+    }
+
+    .preview-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .cv-container {
+        width: 794px;
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    .preview-heading h2 {
+        font-size: 21px;
+    }
+}
+
+/* ========================================
+   17. PRINT / DOWNLOAD PDF
+======================================== */
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html,
+    body {
+        width: 210mm;
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    .editor-container,
+    .preview-heading {
+        display: none !important;
+    }
+
+    .builder-layout {
+        display: block;
+        width: 210mm;
+        margin: 0;
+        padding: 0;
+    }
+
+    .preview-container {
+        width: 210mm;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .cv-container {
+        width: 210mm;
+        max-width: none;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        overflow: hidden;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #downloadButton {
+        display: none !important;
+    }
+}
+
+
+/* ========================================
+   PDF EXPORT SETTINGS
+======================================== */
+
+.pdf-export-mode {
+    width: 794px !important;
+    max-width: none !important;
+    min-height: 1123px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+.pdf-export-mode .header {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.pdf-export-mode * {
+    box-sizing: border-box;
+}

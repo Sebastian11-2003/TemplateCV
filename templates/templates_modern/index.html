@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Professional CV Builder</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/templates/templates_modern/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="editor-navbar">
+        <div class="navbar-left">
+            <a href="/" class="brand-logo">
+                <span class="brand-icon">CV</span>
+                <span>CVSVP.</span>
+            </a>
+
+            <span class="navbar-divider">/</span>
+            <span class="page-label">CV Editor</span>
+        </div>
+
+        <div class="navbar-right">
+            <span class="guest-status">Guest Mode</span>
+
+            <a href="/login" class="login-btn">Login</a>
+            <a href="/register" class="register-btn">Register</a>
+        </div>
+    </nav>
+
+    <div class="builder-layout">
+
+
+        <div class="editor-container">
+
+            <h2>Customize Your CV</h2>
+
+            <form id="cvForm">
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <h3>Personal Information</h3>
+
+                <label for="photoInput">Profile Photo</label>
+
+                <input type="file" id="photoInput" accept="image/*">
+
+
+                <label for="nameInput">Full Name</label>
+
+                <input type="text" id="nameInput" placeholder="Enter your full name" value="STEFANO ACCORSI">
+
+
+                <label for="jobInput">Job Title</label>
+
+                <input type="text" id="jobInput" placeholder="Enter your job title" value="CONTENT STRATEGIST">
+
+
+                <label for="summaryInput">Professional Summary</label>
+
+                <textarea id="summaryInput" rows="5"
+                    placeholder="Write your professional summary...">Creative and determined marketing content strategist with five years of experience in developing and executing content strategies that drive engagement and growth.</textarea>
+
+
+
+                <!-- CONTACT INFORMATION -->
+
+                <h3>Contact Information</h3>
+
+
+                <label for="phoneInput">Phone</label>
+
+                <input type="text" id="phoneInput" placeholder="Enter your phone number" value="+123-456-7890">
+
+
+                <label for="emailInput">Email</label>
+
+                <input type="email" id="emailInput" placeholder="Enter your email" value="hello@reallygreatsite.com">
+
+
+                <label for="addressInput">Address</label>
+
+                <input type="text" id="addressInput" placeholder="Enter your address"
+                    value="123 Anywhere St., Any City, ST 12345">
+
+
+                <label for="linkedinInput">LinkedIn</label>
+
+                <input type="text" id="linkedinInput" placeholder="Enter your LinkedIn" value="www.reallygreatsite.com">
+
+
+
+                <!-- WORK EXPERIENCE -->
+
+                <h3>Work Experience</h3>
+
+                <p class="form-description">
+                    Pisahkan setiap pengalaman kerja menggunakan satu baris kosong.
+                    Baris pertama adalah jabatan, baris kedua perusahaan,
+                    dan baris berikutnya adalah deskripsi pekerjaan.
+                </p>
+
+                <textarea id="experienceInput" rows="12" placeholder="Enter your work experience...">Content Strategist | 2037-2040
+The Brand Marketing Group
+Created and executed data-driven content projects, achieving a 30% increase in customer engagement rates.
+Increased lead generation by 25% within a year through the development of trend-based marketing materials.
+Implemented targeted content strategies and optimized content distribution, resulting in a 45% increase in website traffic.
+
+Marketing Specialist | 2035-2037
+Marketing Solutions Agency
+Performed market research and data analysis, which resulted in a 15% increase in customer retention rates.
+Contributed to a 30% increase in lead generation through well-developed and executed marketing campaigns.
+Developed a digital marketing campaign for a new product, which increased conversion rates by 5%.</textarea>
+
+
+
+                <!-- AWARDS AND CERTIFICATION -->
+
+                <h3>Awards and Certification</h3>
+
+                <p class="form-description">
+                    Gunakan tanda | untuk memisahkan nama penghargaan
+                    dan nama penyelenggara.
+                </p>
+
+                <textarea id="awardsInput" rows="8" placeholder="Enter your awards...">Employee Excellence (2036)|Marketing Solutions Agency
+Certificate of Completion, Marketing Strategy Course (2035)|Marketing Experts Network
+Promising Writer Award (2034)|Liberty State University Newsletter Editorial Staff
+Certificate of Completion, Writing for Marketing (2034)|Liberty State University Department of Marketing</textarea>
+
+
+
+                <!-- ACADEMIC HISTORY -->
+
+                <h3>Academic History</h3>
+
+
+                <label for="universityInput">University and Year</label>
+
+                <input type="text" id="universityInput" placeholder="University name and year"
+                    value="Liberty State University | 2031-2035">
+
+
+                <label for="degreeInput">Degree</label>
+
+                <input type="text" id="degreeInput" placeholder="Enter your degree"
+                    value="Bachelor of Arts in Marketing Communication">
+
+
+                <label for="educationInput">Additional Information</label>
+
+                <textarea id="educationInput" rows="5" placeholder="Enter additional information...">GPA 3.9
+President, University Marketing Aspirants
+Contributing Writer, University Newsletter</textarea>
+
+
+
+                <!-- DOWNLOAD BUTTON -->
+
+                <button type="button" id="downloadButton">
+                    Download CV as PDF
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- ======================================
+             RIGHT SIDE - LIVE CV PREVIEW
+        ======================================= -->
+
+        <div class="preview-container">
+
+
+            <!-- PREVIEW HEADING -->
+
+            <div class="preview-heading">
+
+                <h2>Preview CV</h2>
+
+            </div>
+
+
+
+            <!-- ==================================
+                 CV PAPER
+            =================================== -->
+
+            <div class="cv-container">
+
+
+                <!-- HEADER -->
+
+                <header class="header">
+
+
+                    <!-- PROFILE PHOTO -->
+
+                    <div class="profile-wrapper">
+
+                        <img id="previewPhoto" src="default-profile.png">
+
+                    </div>
+
+
+
+                    <!-- NAME AND JOB -->
+
+                    <div class="header-info">
+
+                        <h1 id="previewName">
+                            Sebastian Veron Panjaitan
+                        </h1>
+
+                        <p id="previewJob">
+                            CONTENT STRATEGIST
+                        </p>
+
+                    </div>
+
+
+                </header>
+
+
+
+                <!-- MAIN CONTENT -->
+
+                <main class="content">
+
+
+                    <!-- ==================================
+                         SUMMARY AND CONTACT
+                    =================================== -->
+
+                    <section class="top-section">
+
+
+                        <!-- PROFESSIONAL SUMMARY -->
+
+                        <div class="section-column">
+
+                            <h2>PROFESSIONAL SUMMARY</h2>
+
+                            <p id="previewSummary">
+
+                                Creative and determined marketing content
+                                strategist with five years of experience
+                                in developing and executing content
+                                strategies that drive engagement and growth.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- CONTACT INFORMATION -->
+
+                        <div class="section-column">
+
+                            <h2>CONTACT</h2>
+
+                            <p>
+
+                                <strong>Phone:</strong>
+
+                                <span id="previewPhone">
+                                    +123-456-7890
+                                </span>
+
+                                <br>
+
+
+                                <strong>Email:</strong>
+
+                                <span id="previewEmail">
+                                    hello@reallygreatsite.com
+                                </span>
+
+                                <br>
+
+
+                                <strong>Address:</strong>
+
+                                <span id="previewAddress">
+                                    123 Anywhere St., Any City, ST 12345
+                                </span>
+
+                                <br>
+
+
+                                <strong>LinkedIn:</strong>
+
+                                <span id="previewLinkedin">
+                                    www.reallygreatsite.com
+                                </span>
+
+                            </p>
+
+                        </div>
+
+
+                    </section>
+
+
+
+                    <!-- DIVIDER -->
+
+                    <hr>
+
+
+
+                    <!-- ==================================
+                         WORK EXPERIENCE
+                    =================================== -->
+
+                    <section class="experience-section">
+
+                        <h2>WORK EXPERIENCE</h2>
+
+                        <div id="previewExperience">
+
+                            <!-- Generated by JavaScript -->
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- DIVIDER -->
+
+                    <hr>
+
+
+
+                    <!-- ==================================
+                         BOTTOM SECTION
+                    =================================== -->
+
+                    <section class="bottom-section">
+
+
+                        <!-- AWARDS -->
+
+                        <div class="section-column">
+
+                            <h2>AWARDS AND CERTIFICATION</h2>
+
+                            <div id="previewAwards">
+
+                                <!-- Generated by JavaScript -->
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EDUCATION -->
+
+                        <div class="section-column">
+
+                            <h2>ACADEMIC HISTORY</h2>
+
+                            <div id="previewEducation">
+
+                                <!-- Generated by JavaScript -->
+
+                            </div>
+
+                        </div>
+
+
+                    </section>
+
+
+                </main>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="/templates/templates_modern/script.js"></script>
+
+
+</body>
+
+</html>

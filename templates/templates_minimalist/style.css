@@ -1,0 +1,554 @@
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #f1f2f4;
+    color: #222;
+}
+
+/* EDITOR NAVBAR */
+
+.editor-navbar {
+    width: 100%;
+    height: 68px;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8ed;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left {
+    gap: 13px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #252238;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #7655d9;
+    color: white;
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.navbar-divider {
+    color: #d0ced8;
+}
+
+.page-label {
+    color: #777386;
+    font-size: 14px;
+}
+
+.navbar-right {
+    gap: 12px;
+}
+
+.guest-status {
+    font-size: 12px;
+    color: #25865b;
+    background: #eaf8f0;
+    padding: 7px 12px;
+    border-radius: 20px;
+    margin-right: 8px;
+}
+
+.login-btn,
+.register-btn {
+    padding: 9px 19px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.login-btn {
+    color: #7655d9;
+    border: 1px solid #7655d9;
+}
+
+.login-btn:hover {
+    background: #f5f1ff;
+}
+
+.register-btn {
+    color: #ffffff;
+    background: #7655d9;
+}
+
+.register-btn:hover {
+    background: #6341c5;
+}
+
+@media (max-width: 600px) {
+    .editor-navbar {
+        padding: 0 15px;
+        height: 62px;
+    }
+
+    .page-label,
+    .navbar-divider,
+    .guest-status {
+        display: none;
+    }
+
+    .brand-logo {
+        font-size: 16px;
+    }
+
+    .login-btn,
+    .register-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+
+/* =====================================
+   LAYOUT EDITOR DAN PREVIEW
+===================================== */
+
+.builder-layout {
+    display: grid;
+    grid-template-columns: 380px minmax(0, 1fr);
+    gap: 25px;
+    max-width: 1600px;
+    margin: 20px auto;
+    padding: 0 25px;
+    align-items: start;
+    min-height: calc(100vh - 88px);
+}
+
+/* =====================================
+   EDITOR
+===================================== */
+
+.editor-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.07);
+}
+
+.editor-container h2 {
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.editor-container > p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+#cvForm {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#cvForm h3 {
+    font-size: 15px;
+    color: #222;
+    margin-top: 15px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 11px;
+    font-size: 13px;
+    font-family: inherit;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #555;
+    box-shadow: 0 0 0 2px rgba(0,0,0,.06);
+}
+
+.form-group textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.form-group small {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.5;
+}
+
+#downloadButton {
+    margin-top: 15px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#downloadButton:hover {
+    background: #444;
+}
+
+/* =====================================
+   PREVIEW
+===================================== */
+
+.preview-container {
+    min-width: 0;
+}
+
+.preview-heading {
+    margin-bottom: 15px;
+}
+
+.preview-heading h2 {
+    font-size: 22px;
+}
+
+.preview-heading p {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #777;
+}
+
+.cv-container {
+    width: auto;
+    min-height: 0;
+    padding: 55px 42px;
+    margin: 0 auto;
+    background: #fff;
+    color: #222;
+    box-shadow: 0 5px 25px rgba(0,0,0,.12);
+    overflow: hidden;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* =====================================
+   HEADER CV
+===================================== */
+
+.cv-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cv-header h1 {
+    font-size: 37px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.cv-header p {
+    align-self: flex-end;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-top: -2px;
+}
+
+/* =====================================
+   CONTACT
+===================================== */
+
+.cv-contact {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 17px;
+    font-size: 12px;
+    color: #333;
+    overflow-wrap: anywhere;
+}
+
+.contact-divider {
+    color: #888;
+}
+
+.header-line {
+    height: 4px;
+    background: #e9e9e9;
+    margin: 15px 0 55px;
+}
+
+/* =====================================
+   SECTION CV
+===================================== */
+
+.cv-section {
+    margin-bottom: 35px;
+    page-break-inside: auto;
+}
+
+.cv-section h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.cv-section > p {
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: justify;
+    color: #444;
+}
+
+/* =====================================
+   WORK EXPERIENCE
+===================================== */
+
+.experience-item {
+    margin-bottom: 24px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.experience-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 4px;
+}
+
+.experience-heading h3 {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.experience-heading .date {
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.experience-company {
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.experience-item ul {
+    padding-left: 20px;
+}
+
+.experience-item li {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #444;
+    padding-left: 1px;
+}
+
+/* =====================================
+   EDUCATION
+===================================== */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.education-item {
+    min-width: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.education-item h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.education-item .institution {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.education-item ul {
+    padding-left: 19px;
+    margin-bottom: 7px;
+}
+
+.education-item li {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.education-item .date {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =====================================
+   SKILLS
+===================================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.skills-column {
+    padding-left: 20px;
+}
+
+.skills-column li {
+    font-size: 12px;
+    line-height: 1.55;
+    color: #444;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media screen and (max-width: 1100px) {
+    .builder-layout {
+        grid-template-columns: 320px minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .preview-container {
+        overflow-x: auto;
+        padding-bottom: 15px;
+    }
+
+    .cv-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        padding: 12px;
+    }
+
+    .builder-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .editor-container {
+        padding: 18px;
+    }
+
+    .preview-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .cv-container {
+        margin: 0;
+    }
+}
+
+/* =====================================
+   PRINT / SAVE PDF
+===================================== */
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html,
+    body {
+        width: 210mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff;
+    }
+
+    .editor-container,
+    .preview-heading {
+        display: none !important;
+    }
+
+    .builder-layout {
+        display: block;
+        width: 794px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .preview-container {
+        width: 794px;
+        overflow: visible;
+    }
+
+    .cv-container {
+        width: 794px;
+        min-height: 1123px;
+        margin: 0;
+        box-shadow: none;
+        overflow: visible;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CVSVP - Create and customize your professional CV with ease.">
+    <title>CVSVP - Personal CV Builder</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="/" class="logo">
+                <span class="logo-icon">S</span>
+                <span>CV<span class="logo-purple">SVP.</span></span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#templates" class="nav-link">Templates</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+
+                <div class="nav-buttons">
+                    <a href="#" class="btn-login" id="loginBtn">Login</a>
+                    <a href="#templates" class="btn-primary nav-cta">Get Started</a>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        YOUR PERSONAL CV BUILDER
+                    </span>
+
+                    <h1>
+                        Build Your
+                        <span>Professional CV.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Create a CV that showcases your skills and experience.
+                        Choose a design, customize your information, and get
+                        your resume ready for your next opportunity.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#templates" class="btn-primary">
+                            Create Your CV <span>→</span>
+                        </a>
+
+                        <a href="#templates" class="btn-secondary">
+                            Browse Templates
+                        </a>
+                    </div>
+
+                    <div class="hero-note">
+                        <span>✓</span> Easy CV customization
+                        <span class="note-divider">·</span>
+                        PDF download available
+                    </div>
+
+                </div>
+
+
+                <!-- CV PREVIEW -->
+                <div class="hero-visual">
+
+                    <div class="hero-preview-label">
+                        <span class="preview-dot"></span>
+                        PERSONAL CV PREVIEW
+                    </div>
+
+                    <div class="resume-preview">
+
+                        <div class="resume-header">
+                            <div class="resume-avatar">SV</div>
+
+                            <div>
+                                <h2>Sebastian Veron Panjaitan</h2>
+                                <p>Fullstack Developer</p>
+                            </div>
+                        </div>
+
+                        <div class="resume-line"></div>
+
+                        <div class="resume-section">
+                            <h3>PROFILE</h3>
+                            <p>
+                                Fullstack Developer with an interest in building
+                                responsive web applications and practical digital
+                                solutions. Familiar with frontend and backend
+                                development, database management, and application
+                                development.
+                            </p>
+                        </div>
+
+                        <div class="resume-section">
+                            <h3>EXPERIENCE</h3>
+
+                            <strong>Web Developer</strong>
+                            <small>Independent Projects · 2024 - Present</small>
+
+                            <p>
+                                Developed web applications using HTML, CSS,
+                                JavaScript, Node.js, Express, and MySQL.
+                            </p>
+                        </div>
+
+                        <div class="resume-section">
+                            <h3>EDUCATION</h3>
+
+                            <strong>Bachelor of Informatics Engineering</strong>
+                            <small>Universitas Mikroskil</small>
+                        </div>
+
+                        <div class="resume-section">
+                            <h3>TECHNICAL SKILLS</h3>
+
+                            <div class="resume-skills">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Node.js</span>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- TEMPLATE SECTION -->
+        <section class="templates-section" id="templates">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">CV TEMPLATE COLLECTION</span>
+
+                    <h2>
+                        Find a Design That
+                        <span>Fits Your Style.</span>
+                    </h2>
+
+                    <p>
+                        Explore different CV layouts and choose the one
+                        that best represents your professional profile.
+                    </p>
+                </div>
+
+
+                <div class="template-grid">
+
+                    <!-- TEMPLATE 1: MODERN -->
+                    <article class="template-card">
+
+                        <div class="template-image">
+                            <div class="mini-cv mini-modern">
+
+                                <div class="mini-header">
+                                    <div class="mini-avatar"></div>
+
+                                    <div>
+                                        <div class="mini-title"></div>
+                                        <div class="mini-subtitle"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mini-divider"></div>
+
+                                <div class="mini-heading">PROFILE</div>
+                                <div class="mini-line"></div>
+                                <div class="mini-line short"></div>
+
+                                <div class="mini-heading">EXPERIENCE</div>
+                                <div class="mini-line"></div>
+                                <div class="mini-line short"></div>
+
+                                <div class="mini-heading">EDUCATION</div>
+                                <div class="mini-line"></div>
+                                <div class="mini-line short"></div>
+
+                                <div class="mini-heading">SKILLS</div>
+                                <div class="mini-line"></div>
+
+                            </div>
+
+                            <span class="template-tag">POPULAR</span>
+                        </div>
+
+                        <div class="template-info">
+                            <div>
+                                <h3>Modern</h3>
+                                <p>Clean & Contemporary</p>
+                            </div>
+
+                            <button class="template-btn" data-template="modern">
+                                Preview →
+                            </button>
+                        </div>
+
+                    </article>
+
+
+                    <!-- TEMPLATE 2: PROFESSIONAL -->
+                    <article class="template-card">
+
+                        <div class="template-image">
+                            <div class="mini-cv mini-professional">
+
+                                <div class="professional-top">
+                                    <div class="professional-name"></div>
+                                    <div class="professional-subtitle"></div>
+                                </div>
+
+                                <div class="professional-content">
+
+                                    <div class="professional-sidebar">
+                                        <div class="mini-heading">CONTACT</div>
+                                        <div class="mini-line"></div>
+                                        <div class="mini-line short"></div>
+
+                                        <div class="mini-heading">SKILLS</div>
+                                        <div class="mini-line"></div>
+                                        <div class="mini-line"></div>
+                                    </div>
+
+                                    <div class="professional-main">
+                                        <div class="mini-heading">PROFILE</div>
+                                        <div class="mini-line"></div>
+                                        <div class="mini-line short"></div>
+
+                                        <div class="mini-heading">EXPERIENCE</div>
+                                        <div class="mini-line"></div>
+                                        <div class="mini-line short"></div>
+
+                                        <div class="mini-heading">EDUCATION</div>
+                                        <div class="mini-line"></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="template-info">
+                            <div>
+                                <h3>Professional</h3>
+                                <p>Elegant & Corporate</p>
+                            </div>
+
+                            <button class="template-btn" data-template="professional">
+                                Preview →
+                            </button>
+                        </div>
+
+                    </article>
+
+
+                    <!-- TEMPLATE 3: MINIMALIST -->
+                    <article class="template-card">
+
+                        <div class="template-image">
+                            <div class="mini-cv mini-minimalist">
+
+                                <div class="minimalist-top">
+                                    <div class="minimalist-name"></div>
+                                    <div class="mini-subtitle"></div>
+                                </div>
+
+                                <div class="mini-heading">ABOUT ME</div>
+                                <div class="mini-line"></div>
+                                <div class="mini-line short"></div>
+
+                                <div class="mini-heading">WORK EXPERIENCE</div>
+                                <div class="mini-line"></div>
+                                <div class="mini-line"></div>
+                                <div class="mini-line short"></div>
+
+                                <div class="mini-heading">EDUCATION</div>
+                                <div class="mini-line"></div>
+                                <div class="mini-line short"></div>
+
+                                <div class="mini-heading">SKILLS</div>
+                                <div class="mini-line"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="template-info">
+                            <div>
+                                <h3>Minimalist</h3>
+                                <p>Simple & Elegant</p>
+                            </div>
+
+                            <button class="template-btn" data-template="minimalist">
+                                Preview →
+                            </button>
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <div class="template-more">
+                    <a href="#templates" class="btn-outline" id="viewAllBtn">
+                        View All Templates
+                        <span>→</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES SECTION -->
+        <section class="features-section" id="features">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">WHAT YOU CAN DO</span>
+
+                    <h2>
+                        Create Your CV
+                        <span>Your Way.</span>
+                    </h2>
+
+                    <p>
+                        Everything you need to build a clean and
+                        professional resume.
+                    </p>
+                </div>
+
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+                        <div class="feature-icon">✦</div>
+
+                        <h3>Ready-to-Use Templates</h3>
+
+                        <p>
+                            Choose from several CV layouts designed
+                            for different professional styles and needs.
+                        </p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">✎</div>
+
+                        <h3>Live CV Editing</h3>
+
+                        <p>
+                            Update your personal details, work experience,
+                            education, and skills with an instant preview.
+                        </p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">↓</div>
+
+                        <h3>PDF Export</h3>
+
+                        <p>
+                            Save your completed CV as a PDF document
+                            whenever it is ready.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+
+            <div class="container about-container">
+
+                <div class="about-content">
+
+                    <span class="section-label">ABOUT CVSVP</span>
+
+                    <h2>
+                        A Simpler Way to
+                        <span>Build Your CV.</span>
+                    </h2>
+
+                    <p>
+                        CVSVP is a simple CV builder designed to help
+                        people create professional resumes without
+                        dealing with complicated design software.
+                        Choose a template, enter your information,
+                        and download your CV when it is ready.
+                    </p>
+
+                    <a href="#templates" class="btn-primary">
+                        Start Creating
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <div class="about-decoration">
+
+                    <div class="decoration-circle circle-one"></div>
+                    <div class="decoration-circle circle-two"></div>
+
+                    <div class="about-message">
+                        <span>SVP</span>
+                        <h3>Make Your Experience Stand Out.</h3>
+                        <p>A better CV starts with a clear presentation.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <a href="#home" class="logo footer-logo">
+                <span class="logo-icon">S</span>
+                <span>CV<span class="logo-purple">SVP.</span></span>
+            </a>
+
+            <p>A simple way to create your professional CV.</p>
+
+            <div class="footer-bottom">
+                <span>
+                    © <span id="currentYear"></span> CVSVP. All rights reserved.
+                </span>
+
+                <a href="#home">Back to top ↑</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

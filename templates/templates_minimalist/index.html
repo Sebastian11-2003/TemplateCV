@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist CV Builder</title>
+
+    <link rel="stylesheet" href="/templates/templates_minimalist/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+<nav class="editor-navbar">
+    <div class="navbar-left">
+        <a href="/" class="brand-logo">
+            <span class="brand-icon">CV</span>
+            <span>CVSVP.</span>
+        </a>
+
+        <span class="navbar-divider">/</span>
+        <span class="page-label">CV Editor</span>
+    </div>
+
+    <div class="navbar-right">
+        <span class="guest-status">Guest Mode</span>
+
+        <a href="/login" class="login-btn">Login</a>
+        <a href="/register" class="register-btn">Register</a>
+    </div>
+</nav>
+
+
+    <div class="builder-layout">
+
+        <!-- EDITOR -->
+        <aside class="editor-container">
+            <h2>CV Builder</h2>
+            <p>Isi data berikut untuk membuat CV profesional.</p>
+
+            <form id="cvForm">
+
+                <h3>Informasi Pribadi</h3>
+
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="nameInput" value="EMMA SANCHEZ">
+                </div>
+
+                <div class="form-group">
+                    <label>Jabatan</label>
+                    <input type="text" id="jobInput" value="Administrative Manager">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="emailInput" value="hello@reallygreatsite.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Nomor Telepon</label>
+                    <input type="text" id="phoneInput" value="123-456-7890">
+                </div>
+
+                <div class="form-group">
+                    <label>Alamat</label>
+                    <input type="text" id="addressInput" value="123 Anywhere St., Any City">
+                </div>
+
+                <h3>Professional Summary</h3>
+
+                <div class="form-group">
+                    <label>Ringkasan Profesional</label>
+                    <textarea
+                        id="summaryInput">Results-driven Administrative Manager with 8+ years of experience leading office operations, HR support, budgeting, procurement, and cross-functional coordination. Proven ability to optimize administrative processes, reduce operational costs, and support senior leadership with high-level reporting and organizational planning. Skilled in team leadership, policy development, compliance systems, and project execution.</textarea>
+                </div>
+
+                <h3>Work Experience</h3>
+
+                <div class="form-group">
+                    <label>Pengalaman Kerja</label>
+                    <textarea id="experienceInput"
+                        rows="16">Administrative Assistant|Arowwai Industries|Oct 2023 - Present|Managed daily administrative operations for a 120+ employee organization, ensuring smooth workflow, scheduling, and resource allocation.|Implemented a digital document management system, reducing retrieval time by 45% and improving audit compliance.|Led a team of 8 administrative staff, overseeing task distribution, training, and performance evaluations.
+
+HR & Employee Support|Arowwai Industries|Oct 2021 - Oct 2023|Oversaw HR administrative functions for 150+ employees, including personnel files, attendance tracking, and payroll documentation.|Designed onboarding programs and conducted orientation sessions, reducing early employee turnover by 12%.|Managed internal communication and assisted HR leadership with performance evaluations and employee relations tasks.
+
+Office Coordinator|Arowwai Industries|Oct 2020 - Oct 2021|Supervised daily office operations, coordinating administrative tasks, vendor communication, and supply management.|Monitored office inventory and implemented cost-saving procurement methods, lowering supply expenses by 18%.|Assisted in budget preparation, monthly reporting, and workflow documentation.</textarea>
+                    <small>
+                        Format setiap pekerjaan: Jabatan|Perusahaan|Tanggal|Deskripsi 1|Deskripsi 2. Pisahkan pekerjaan
+                        dengan satu baris kosong.
+                    </small>
+                </div>
+
+                <h3>Education</h3>
+
+                <div class="form-group">
+                    <label>Riwayat Pendidikan</label>
+                    <textarea id="educationInput" rows="7">Bachelor of Business Administration|University of Business Excellence|Final CGPA: 3.90|Jan 2019 - Feb 2021
+
+Foundation in Business Administration|Borcelle University|Final CGPA: 3.80|Jan 2018 - Dec 2018</textarea>
+                    <small>
+                        Format: Gelar|Institusi|Keterangan|Tahun. Pisahkan dengan satu baris kosong.
+                    </small>
+                </div>
+
+                <h3>Skills</h3>
+
+                <div class="form-group">
+                    <label>Daftar Keahlian</label>
+                    <textarea id="skillsInput" rows="6">Office Administration & Operations
+SOP Development & Process Optimization
+Budgeting & Cost Control
+Procurement & Vendor Management
+Team Leadership & Training
+HR Administration & Onboarding</textarea>
+                    <small>Satu keahlian per baris.</small>
+                </div>
+
+                <button type="button" id="downloadButton">
+                    Download CV as PDF
+                </button>
+
+            </form>
+        </aside>
+
+
+        <!-- PREVIEW -->
+        <main class="preview-container">
+
+            <div class="preview-heading">
+                <h2>Preview CV</h2>
+            </div>
+
+            <div class="cv-container">
+
+                <!-- HEADER -->
+                <header class="cv-header">
+                    <h1 id="previewName">Sebastian Veron Panjaitan</h1>
+                    <p id="previewJob">Administrative Manager</p>
+                </header>
+
+                <!-- CONTACT -->
+                <div class="cv-contact">
+                    <span id="previewEmail"></span>
+                    <span class="contact-divider">|</span>
+                    <span id="previewPhone"></span>
+                    <span class="contact-divider">|</span>
+                    <span id="previewAddress"></span>
+                </div>
+
+                <div class="header-line"></div>
+
+                <!-- SUMMARY -->
+                <section class="cv-section">
+                    <h2>PROFESSIONAL SUMMARY</h2>
+                    <p id="previewSummary"></p>
+                </section>
+
+                <!-- EXPERIENCE -->
+                <section class="cv-section">
+                    <h2>WORK EXPERIENCE</h2>
+                    <div id="previewExperience"></div>
+                </section>
+
+                <!-- EDUCATION -->
+                <section class="cv-section">
+                    <h2>EDUCATION</h2>
+                    <div class="education-grid" id="previewEducation"></div>
+                </section>
+
+                <!-- SKILLS -->
+                <section class="cv-section">
+                    <h2>SKILLS</h2>
+                    <div class="skills-grid" id="previewSkills"></div>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script src="/templates/templates_minimalist/script.js"></script>
+</body>
+
+</html>

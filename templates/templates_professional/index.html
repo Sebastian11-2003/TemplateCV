@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Builder</title>
+
+    <link rel="stylesheet" href="/templates/templates_professional/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="editor-navbar">
+        <div class="navbar-left">
+            <a href="/" class="brand-logo">
+                <span class="brand-icon">CV</span>
+                <span>CVSVP.</span>
+            </a>
+
+            <span class="navbar-divider">/</span>
+            <span class="page-label">CV Editor</span>
+        </div>
+
+        <div class="navbar-right">
+            <span class="guest-status">Guest Mode</span>
+
+            <a href="/login" class="login-btn">Login</a>
+            <a href="/register" class="register-btn">Register</a>
+        </div>
+    </nav>
+
+<div class="builder-layout">
+
+    <!-- ================= EDITOR ================= -->
+    <aside class="editor-container">
+        <h2>CV Builder</h2>
+        <p>Isi informasi untuk membuat CV kamu.</p>
+
+        <form id="cvForm">
+
+            <h3>Informasi Pribadi</h3>
+
+            <div class="form-group">
+                <label>Foto Profil</label>
+                <input type="file" id="photoInput" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label>Nama Lengkap</label>
+                <input type="text" id="nameInput" value="Lorna Alvarado">
+            </div>
+
+            <div class="form-group">
+                <label>Posisi / Jabatan</label>
+                <input type="text" id="jobInput" value="Sales Representative">
+            </div>
+
+            <div class="form-group">
+                <label>Tentang Saya</label>
+                <textarea id="aboutInput">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+            </div>
+
+            <h3>Kontak</h3>
+
+            <div class="form-group">
+                <label>Nomor Telepon</label>
+                <input type="text" id="phoneInput" value="123-456-7890">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="emailInput" value="hello@reallygreatsite.com">
+            </div>
+
+            <div class="form-group">
+                <label>Alamat</label>
+                <input type="text" id="addressInput" value="123 Anywhere St, Any City">
+            </div>
+
+            <h3>Pendidikan</h3>
+
+            <div class="form-group">
+                <label>Riwayat Pendidikan</label>
+                <textarea id="educationInput">Bor celle University|Bachelor of Business Management|2020 - 2023
+
+Wardiere University|Bachelor of Business Management|2016 - 2020
+
+Bor celle University|Bachelor of Business Management|2012 - 2016</textarea>
+                <small>Format setiap pendidikan: Nama institusi|Jurusan|Tahun. Pisahkan dengan baris kosong.</small>
+            </div>
+
+            <h3>Keahlian</h3>
+
+            <div class="form-group">
+                <label>Daftar Keahlian</label>
+                <textarea id="skillsInput">Management Skills
+Creativity
+Digital Marketing
+Negotiation
+Critical Thinking
+Leadership</textarea>
+                <small>Satu keahlian per baris.</small>
+            </div>
+
+            <h3>Bahasa</h3>
+
+            <div class="form-group">
+                <label>Daftar Bahasa</label>
+                <textarea id="languagesInput">English
+Spain</textarea>
+                <small>Satu bahasa per baris.</small>
+            </div>
+
+            <h3>Pengalaman Kerja</h3>
+
+            <div class="form-group">
+                <label>Pengalaman</label>
+                <textarea id="experienceInput">Product Design Manager|Arowwai Industries|2016 - 2020|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet sem nec risus egestas accumsan.
+
+Marketing Manager|Arowwai Industries|2019 - 2020|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet sem nec risus egestas accumsan.
+
+Marketing Manager|Arowwai Industries|2017 - 2019|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet sem nec risus egestas accumsan.
+
+Marketing Manager|Arowwai Industries|2016 - 2017|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet sem nec risus egestas accumsan.</textarea>
+                <small>Format: Jabatan|Perusahaan|Tahun|Deskripsi. Pisahkan dengan baris kosong.</small>
+            </div>
+
+            <h3>Referensi</h3>
+
+            <div class="form-group">
+                <label>Referensi 1</label>
+                <input type="text" id="ref1Name" value="Harumi Kobayashi">
+                <input type="text" id="ref1Job" value="Wardiere Inc. / CEO">
+                <input type="text" id="ref1Phone" value="123-456-7890">
+                <input type="email" id="ref1Email" value="hello@reallygreatsite.com">
+            </div>
+
+            <div class="form-group">
+                <label>Referensi 2</label>
+                <input type="text" id="ref2Name" value="Bailey Dupont">
+                <input type="text" id="ref2Job" value="Wardiere Inc. / CEO">
+                <input type="text" id="ref2Phone" value="123-456-7890">
+                <input type="email" id="ref2Email" value="hello@reallygreatsite.com">
+            </div>
+
+            <button type="button" id="downloadButton">
+                Download CV as PDF
+            </button>
+
+        </form>
+    </aside>
+
+
+    <!-- ================= PREVIEW ================= -->
+    <main class="preview-container">
+
+        <div class="preview-heading">
+            <h2>Preview CV</h2>
+        </div>
+
+        <div class="cv-container">
+
+            <!-- SIDEBAR CV -->
+            <section class="cv-sidebar">
+
+                <div class="profile-photo">
+                    <img id="previewPhoto"
+                         src="">
+                </div>
+
+                <div class="sidebar-section contact-section">
+                    <h3><span class="section-icon">☎</span> CONTACT</h3>
+
+                    <ul class="contact-list">
+                        <li><span>☎</span><span id="previewPhone"></span></li>
+                        <li><span>✉</span><span id="previewEmail"></span></li>
+                        <li><span>♦</span><span id="previewAddress"></span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><span class="section-icon">◆</span> EDUCATION</h3>
+                    <div id="previewEducation"></div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><span class="section-icon">✚</span> SKILLS</h3>
+                    <ul class="bullet-list" id="previewSkills"></ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><span class="section-icon">▤</span> LANGUAGE</h3>
+                    <ul class="bullet-list" id="previewLanguages"></ul>
+                </div>
+
+            </section>
+
+
+            <!-- KONTEN UTAMA CV -->
+            <section class="cv-main">
+
+                <header class="cv-header">
+                    <h1 id="previewName">Sebastian Veron Panjaitan</h1>
+                    <p id="previewJob">Sales Representative</p>
+                </header>
+
+                <section class="main-section about-section">
+                    <h3><span class="main-icon">●</span> ABOUT ME</h3>
+                    <p id="previewAbout"></p>
+                </section>
+
+                <section class="main-section experience-section">
+                    <h3><span class="main-icon">▣</span> EXPERIENCE</h3>
+                    <div class="timeline" id="previewExperience"></div>
+                </section>
+
+                <section class="main-section references-section">
+                    <h3><span class="main-icon">▣</span> REFERENCES</h3>
+
+                    <div class="references-grid">
+
+                        <div class="reference-item">
+                            <h4 id="previewRef1Name"></h4>
+                            <p id="previewRef1Job"></p>
+                            <div><b>Phone:</b> <span id="previewRef1Phone"></span></div>
+                            <div><b>Email:</b> <span id="previewRef1Email"></span></div>
+                        </div>
+
+                        <div class="reference-item">
+                            <h4 id="previewRef2Name"></h4>
+                            <p id="previewRef2Job"></p>
+                            <div><b>Phone:</b> <span id="previewRef2Phone"></span></div>
+                            <div><b>Email:</b> <span id="previewRef2Email"></span></div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </section>
+
+        </div>
+    </main>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="/templates/templates_professional/script.js"></script>
+</body>
+</html>
